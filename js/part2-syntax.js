@@ -1,9 +1,9 @@
-/* 
+/*
     syntax/perintah
     => digunakan untuk memerintahkan/menginstruksikan
         pada browser untuk melakukan suatu perintah program.
 */
-/* 
+/*
 contoh syntax:
 - pem-variabelan
     variable pada js itu teridiri dari 3 metode pemvariabelan. antaralain:
