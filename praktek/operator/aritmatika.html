@@ -4,5 +4,7 @@
     const A = 10;
     const B = 5;
     const C = A + B;
-    document.getElementById('result').innerHTML = C;
+    setTimeout(() => {
+        document.getElementById('result').innerHTML = C;
+    }, 3 * 1000) // 3 detik baru munculkan hasil dari variabel C kedalam element H1
 </script>

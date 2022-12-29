@@ -1,0 +1,21 @@
+<pre style="border: 1px solid green;padding: 10px;">
+const y = 5;
+let x = 100;
+setInterval(() => {
+    document.getElementById('plus-result').innerHTML = x;
+    x %= y;
+}, 1 * 1000);
+
+**
+Nilai x akan didapatkan sisa bagi oleh y setiap detiknya.
+hanya akan berlangsung 1 kali, krn sisa bagi tidak akan melebihi variabel pembaginya.
+</pre>
+
+<h1 id="plus-result">Result</h1>
+
+<script>
+    const y = 30;
+    let x = 100;
+    x %= y;
+    document.getElementById('plus-result').innerHTML = x;
+</script>

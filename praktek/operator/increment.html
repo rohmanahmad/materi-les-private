@@ -1,0 +1,12 @@
+<title>Increment</title>
+
+<h1 id="result-inc">Hasil</h1>
+
+<script>
+    let x = 1;
+    setInterval(() => {
+        document.getElementById('result-inc').innerHTML = x;
+        document.title = 'Increment ' + x
+        x++;
+    }, 1 * 1000);
+</script>
