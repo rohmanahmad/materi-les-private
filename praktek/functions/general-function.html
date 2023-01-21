@@ -1,0 +1,32 @@
+<table>
+    <tr>
+        <td>
+            <input type="number" id="n1">
+        </td>
+        <td>+</td>
+        <td>
+            <input type="number" id="n2">
+        </td>
+        <td>
+            Hasilnya: <b id="result"></b>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <button id="b1" onclick="panggilFunction()">Hitung</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+function tambahkanNilaiIni (a, b) {
+    return parseInt(a) + parseInt(b)
+}
+
+function panggilFunction() {
+    const n1 = document.getElementById('n1').value
+    const n2 = document.getElementById('n2').value
+    const result = tambahkanNilaiIni(n1, n2)
+    document.getElementById('result').innerHTML = result
+}
+</script>
