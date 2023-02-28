@@ -59,3 +59,12 @@ const dataFromDB = [
     'Aziel kelas II',
 ]
 */
+
+const reduce = dataFromDB.reduce(function (result, item) {
+    const n = item.nama_anggota_kelas
+    const k = item.kelas
+    if (result[k]) result[k] = n + 'kelas' + k
+    result[k].push()
+    return result
+}, {})
+console.log(reduce)
