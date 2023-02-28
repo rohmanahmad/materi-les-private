@@ -61,7 +61,7 @@ const dataFromDB = [
 */
 
 // reduce, concat, map(optional)
-const reduce = dataFromDB.reduce(function (result, item) {
+const reduce1 = dataFromDB.reduce(function (result, item) {
     const kelas = item.kelas
     const arrayNamaAnggota = item.nama_anggota_kelas
     const arrayNamaAnggotaMap = arrayNamaAnggota.map(function (namaAnggota) {
@@ -71,10 +71,26 @@ const reduce = dataFromDB.reduce(function (result, item) {
     result = result.concat(arrayNamaAnggotaMap)
     return result
 }, [])
-console.log(reduce)
+// console.log(reduce1)
 
 /* 
 {
-    'NAMA_ORANGNYA': 'NAMA_KELASNYA'
+    Alexi: 'II',
+    Ansel: 'II',
+    Arsenio: 'II',
+    Arlo: 'II',
+    Axel: 'II',
+    Aziel: 'II'
 }
 */
+const reduce2 = dataFromDB.reduce(function (result, item) {
+    const kelas = item.kelas
+    const arrayNamaAnggota = item.nama_anggota_kelas
+    const objAnggota = arrayNamaAnggota.reduce(function (..., ...) {
+        res[...] = kelas
+        return res
+    }, {})
+    result = Object.assign(..., objAnggota) // Object.assign(a, b) >> menggabungkan object "b" kedalam object "a" :: keyword google "js Object.assign"
+    return result
+}, {})
+console.log(...)
