@@ -60,11 +60,21 @@ const dataFromDB = [
 ]
 */
 
+// reduce, concat, map(optional)
 const reduce = dataFromDB.reduce(function (result, item) {
-    const n = item.nama_anggota_kelas
-    const k = item.kelas
-    if (result[k]) result[k] = n + 'kelas' + k
-    result[k].push()
+    const kelas = item.kelas
+    const arrayNamaAnggota = item.nama_anggota_kelas
+    const arrayNamaAnggotaMap = arrayNamaAnggota.map(function (namaAnggota) {
+        const statement = namaAnggota + ' kelas ' + kelas
+        return statement
+    })
+    result = result.concat(arrayNamaAnggotaMap)
     return result
-}, {})
+}, [])
 console.log(reduce)
+
+/* 
+{
+    'NAMA_ORANGNYA': 'NAMA_KELASNYA'
+}
+*/
