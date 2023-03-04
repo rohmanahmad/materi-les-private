@@ -86,11 +86,11 @@ const reduce1 = dataFromDB.reduce(function (result, item) {
 const reduce2 = dataFromDB.reduce(function (result, item) {
     const kelas = item.kelas
     const arrayNamaAnggota = item.nama_anggota_kelas
-    const objAnggota = arrayNamaAnggota.reduce(function (..., ...) {
-        res[...] = kelas
+    const objAnggota = arrayNamaAnggota.reduce(function (res, item) {
+        res[item] = kelas
         return res
     }, {})
-    result = Object.assign(..., objAnggota) // Object.assign(a, b) >> menggabungkan object "b" kedalam object "a" :: keyword google "js Object.assign"
+    result = Object.assign(result, objAnggota) // Object.assign(a, b) >> menggabungkan object "b" kedalam object "a" :: keyword google "js Object.assign"
     return result
 }, {})
-console.log(...)
+console.log(reduce2)
