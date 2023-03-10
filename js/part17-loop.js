@@ -55,7 +55,7 @@ const length = dataFromDB.length
 console.log('array size(dataFromDB):', length)
 
 for (let i = 0; i < length; i++) {
-    // const eachItemOfDataFromDB = dataFromDB[i]=
+    // const eachItemOfDataFromDB = dataFromDB[i]
     // console.log({i, item: eachItemOfDataFromDB})
     // console.log('>>>', new Date().getTime())
 }
