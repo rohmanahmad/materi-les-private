@@ -11,12 +11,11 @@ const y = 5
 for (let i = x+1; i <= y; i++) {
     const key = `f${i+10}`
     const val = data[key]
-    if (key == `f${13}` || key == `f${14}`) {
-        console.log("...")
+    if (key == 'f13' || key == 'f14') {
+        if (key === 'f14') console.log("...")
     } else {
-       console.log(val) 
+       console.log(val)
     }
-    
 }
 
 /* 
