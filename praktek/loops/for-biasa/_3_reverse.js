@@ -8,7 +8,7 @@ const data = {
 
 const x = 0
 const y = 5
-for (let i = x+1; i <= y; i++) {
+for (let i = y; i > x; i--) {
     const key = `f${i}`
     const val = data[key]
     console.log(val)

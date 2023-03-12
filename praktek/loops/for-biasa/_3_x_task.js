@@ -9,9 +9,14 @@ const data = {
 const x = 0
 const y = 5
 for (let i = x+1; i <= y; i++) {
-    const key = `f${i}`
+    const key = `f${i+10}`
     const val = data[key]
-    console.log(val)
+    if (key == `f${13}` || key == `f${14}`) {
+        console.log("...")
+    } else {
+       console.log(val) 
+    }
+    
 }
 
 /* 
