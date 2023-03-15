@@ -1,4 +1,4 @@
-const data = [1,2,3,4,5,4,3,2,1]
+const data = [5,4,3,2,1,2,3,4,5]
 const x = 0
 const y = data.length
 const nilaiMax = 5
@@ -12,9 +12,13 @@ for (let i = x; i < y; i++) {
 
 /* 
 expected result:
-    *****
-   *****
+*********
+ *******
   *****
- *****  
-*****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
 */
