@@ -7,7 +7,7 @@ const data = {
 }
 
 const x = 0
-const y = 5
+const y = Object.keys(data).length
 for (let i = x+1; i <= y; i++) {
     const key = `f${i}`
     const val = data[key]

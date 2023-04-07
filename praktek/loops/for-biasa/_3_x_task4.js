@@ -10,11 +10,13 @@ for (let i = x; i < y; i++) {
     console.log(space+star+'    '+mirror)
 }
 
-/* 
+/*
+
 expected result:
     *    *****
    **    ****
   ***    ***
  ****    **
 *****    *
+
 */

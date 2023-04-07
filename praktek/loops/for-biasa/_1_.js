@@ -16,7 +16,13 @@ jika tidak mematuhi aturan diatas, maka akan terjadi infinite loop.
 */
 const x = 1
 const y = 10
-for (let i = x; i <= y; i++) {
+for (
+    let i = x;  // inisiasi
+    i <= y;     // batasan
+    i++         // increment / decrement
+)
+{
+    // logic
     console.log(i)
 }
 
