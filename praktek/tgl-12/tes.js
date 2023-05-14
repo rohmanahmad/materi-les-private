@@ -21,3 +21,25 @@ const e = 'O'
 - transform / ubah hasil dari poin 1 menjadi tipe Data String menggunakan method .join sehingga menjadi 'H E L L O'
 
 */
+
+const statement = 'apa kabar,'
+const name = 'wildan'
+console.log(statement +name)
+
+const wordTamplate = `Hallo, ${name} ${statement}?
+${statement} keluarga mu ${name}`
+console.log(wordTamplate)
+
+const a = 'H'
+const b = 'E'
+const c = 'L'
+const d = 'L'
+const e = 'O'
+const arr = []
+arr.push(a,b,c,d,e)
+console.log(arr)
+
+const rep = arr.join("")
+const rep2 = arr.join(" ")
+console.log(rep)
+console.log(rep2)
