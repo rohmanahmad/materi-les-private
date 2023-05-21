@@ -28,7 +28,7 @@ const map1 = array1.map(function (value, index) {
     return hasil
 })
 
-// console.log(map1) // >>> aktifkan aja kalau ingin melihat hasil/output dari map1
+console.log(map1) // >>> aktifkan aja kalau ingin melihat hasil/output dari map1
 
 const each1 = array1.forEach(function (value, index) {
     // fungsi pada .forEach merupakan fungsi asynchronous

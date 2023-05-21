@@ -10,3 +10,10 @@ task:
   x2: 'World'
 }
 */
+const spt = strA.split(' ')
+const red = spt.reduce(function(result, item, index){
+  result['x'+(index+1)] = item
+  return result
+
+},{})
+console.log(red)
