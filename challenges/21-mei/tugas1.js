@@ -29,3 +29,14 @@ const red2 = spt.reduce(function(result, item, index){
   return result
 },[])
 console.log(red2)
+
+/* 
+[
+  {
+    x1: 'Hello'
+  },
+  {
+    x2: 'World'
+  }
+]
+*/
