@@ -17,3 +17,10 @@ const red = spt.reduce(function(result, item, index){
 
 },{})
 console.log(red)
+
+/* 
+[
+  'x1 Hello',
+  'x2 World'
+]
+*/
