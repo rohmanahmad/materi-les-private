@@ -24,3 +24,8 @@ console.log(red)
   'x2 World'
 ]
 */
+const red2 = spt.reduce(function(result, item, index){
+  result.push('x'+(index+1)+' '+item)
+  return result
+},[])
+console.log(red2)
