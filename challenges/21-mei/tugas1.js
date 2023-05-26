@@ -40,3 +40,13 @@ console.log(red2)
   }
 ]
 */
+const red3 = spt.reduce(function(result, item, index){
+  let obj = {}
+  obj['x'+(index+1)] = item
+  result.push(obj)
+  return result
+},[])
+console.log(red3)
+
+const rep = strA.replace(' ', '-')
+console.log(rep)

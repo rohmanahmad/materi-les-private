@@ -47,3 +47,42 @@ Tasks:
   ]
 
 */
+// const red = data.reduce(function(result, item, index){
+//   item['sub_total'] = item.price * item.qty // untuk menambahkan key pada variabel item dengan key sub_total
+//   result.push(item) 
+//   return result
+// },[]) 
+// console.log(red) 
+
+// const dataMap = data.map(function(currentValue, valueIndex){
+//   const subtotal = currentValue.price * currentValue.qty
+//   currentValue.sub_total = subtotal
+//   return currentValue
+// }) 
+
+// console.log(dataMap)
+
+// const size = data.length
+// let items = []
+// for (let x = 0; x<size; x++) {
+//   const item = data[x]
+//   item.sub_total = item.price * item.qty
+//   items.push(item)
+// }
+// console.log(items)
+
+// let ids = []
+// for (let x in data) {
+//      const id = data[x]
+//      id.sub_total = id.price * id.qty
+//      ids.push(id)
+// }
+// console.log(ids)
+
+let arr = []
+for (let value of data) {
+  const subtotal = value.price * value.qty
+  value.sub_total = subtotal
+  arr.push(value)
+}
+console.log(arr)
