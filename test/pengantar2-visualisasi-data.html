@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualisasi Data</title>
+</head>
+<body>
+  <div class="container">
+    <table border="1">
+      <tr>
+        <th style="text-align: left;">Date</th>
+        <th style="text-align: left;">Channel</th>
+        <th style="text-align: left;">Profile Name</th>
+        <th style="text-align: left;">Profile Followers</th>
+        <th style="text-align: left;">Text Content</th>
+      </tr>
+      <tbody id="tabel1">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function fillRow(item={}) {
+      const template = `
+        <tr>
+          <td>${item.date}</td>
+          <td>${item.channel}</td>
+          <td>${item.real_name} (${item.user_name})</td>
+          <td>${item.followers}</td>
+          <td>${item.text_content}</td>
+        </tr>
+      `
+        document.getElementById('tabel1').insertAdjacentHTML('afterend', template)
+    }
+  </script>
+
+  <script>
+    fetch('https://data-tester.vercel.app/response.json')
+      .then(res=> {
+        return res.json()
+      })
+      .then(json => {
+        const data = json.data
+        for(const item of data) {
+          fillRow(item)
+        }
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  </script>
+</body>
+</html>
