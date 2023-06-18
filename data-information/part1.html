@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visualisasi Data</title>
+  <title>Data Information Part 1</title>
 </head>
 <body>
   <div class="container">
@@ -21,6 +21,23 @@
   </div>
 
   <script>
+    const x = fetch('https://data-tester.vercel.app/socials.json')
+      .then(res=> {
+        return res.json()
+      })
+      .then(json => {
+        const data = json.data
+        for(const item of data) {
+          fillRow(item)
+        }
+      })
+      .catch(err => {
+        debugger
+        console.error(err)
+      })
+  </script>
+
+  <script>
     function fillRow(item={}) {
       const template = `
         <tr>
@@ -33,22 +50,6 @@
       `
         document.getElementById('tabel1').insertAdjacentHTML('afterend', template)
     }
-  </script>
-
-  <script>
-    fetch('https://data-tester.vercel.app/socials.json')
-      .then(res=> {
-        return res.json()
-      })
-      .then(json => {
-        const data = json.data
-        for(const item of data) {
-          fillRow(item)
-        }
-      })
-      .catch(err => {
-        console.error(err)
-      })
   </script>
 </body>
 </html>
