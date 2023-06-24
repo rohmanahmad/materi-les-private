@@ -31,7 +31,7 @@
           const tableBodyObject = document.getElementById('data-profiles')
           const n = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 })
           for (const item of data) {
-            tableBodyObject.insertAdjacentHTML('afterend', `
+            tableBodyObject.innerHTML += `
               <tr>
                 <td>${ item.service }</td>
                 <td>${ item.username }</td>
@@ -43,7 +43,7 @@
                   <img src="${ item.avatar }" width="50"/>
                 </td>
               </tr>
-            `)
+            `
           }
         })
         .catch(err => {
