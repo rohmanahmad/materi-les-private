@@ -16,6 +16,7 @@
           for (const item of itemProduk) {
             const itemId = item.id
             const itemTitle = item.title
+            console.log({itemId, itemTitle})
             dropdown.innerHTML += `<option value="${itemId}">${itemTitle}</option>`
           }
         })
