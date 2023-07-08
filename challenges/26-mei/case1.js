@@ -77,4 +77,46 @@ rumus:
 - total_discount: harga * discount(%)
 - total_tax: harga * qty / tax(%)
 - fixed_price: (harga * qty) - discount + tax
+
+[
+  {
+    "product_id": "TLR-01",
+    "product_name": "Telur Ayam Kemasan 1KG",
+    "price": {
+      "value": 35000,
+      "discount": 60,
+      "tax": 10
+    },
+    "qty": 1,
+    "detail" : {
+      normal: 35000,
+      total_dicount: 21000,
+      total_tax: 1400,
+      fixed_price: 15400
+    }, 
+    "sub_total" : [
+      35000,
+      21000, 
+      1400, 
+      15400
+    ]
+  }
+  ...dst
+]
 */
+const dataMap = data.map(function(currentValue, valueIndex){
+   const quan = currentValue.qty
+   const pcr = currentValue.price
+   const normal = quan * pcr.value
+   const totdis = pcr.value * (pcr.discount/100)
+   const tottax = quan * pcr.value / (pcr.tax/100)
+   const fixprc = normal - totdis + tottax
+   currentValue.sub_total = {
+      normal : normal,
+      total_discount : totdis,
+      total_tax : tottax,
+      fixed_price : fixprc
+   }
+   return currentValue
+}) 
+console.log(dataMap)

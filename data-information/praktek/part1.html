@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Data Imformasi part I</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-align: left"> Id</th>
+                        <th class="text-align: left"> Title</th>
+                        <th class="text-align: left"> Description</th>
+                        <th class="text-align: left"> Price</th>
+                        <th class="text-align: left"> Discount Percentage</th>
+                        <th class="text-align: left"> Rating</th>
+                        <th class="text-align: left"> Stock</th>
+                        <th class="text-align: left"> Brand</th>  
+                        <th class="text-align: left"> Category</th>
+                        <th class=""> Thumbnail</th>
+                    </tr>
+                </thead>
+                <tbody id="tabel1">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            fetch('https://dummyjson.com/products')
+            .then(res=> {
+                return res.json()
+            })
+            .then(json => {
+                const products = json.products
+                for(const item of products) {
+                    fillRow(item)
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        </script>
+        <script>
+            function fillRow(item={}) {
+                const template = `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.title}</td>
+                        <td>${item.description}</td>
+                        <td>${item.price}</td>
+                        <td>${item.discountPercentage}</td>
+                        <td>${item.rating}</td>
+                        <td>${item.stock}</td>
+                        <td>${item.brand}</td>
+                        <td>${item.category}</td>
+                        <td>
+                            <img src="${item.thumbnail}"
+                        </td>
+                        
+                `
+                document.getElementById('tabel1').insertAdjacentHTML('beforebegin',template)
+            }
+        </script>
+    </body>
+</html>
