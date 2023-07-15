@@ -72,12 +72,16 @@
       bodyDetail.innerHTML += `<tr>
         <td>Produk Thumbnail</td>
         <td>:</td>
-        <td class="width: 200">${data.thumbnail}</td>
+        <td>
+            <img src="${data.thumbnail}" width="200"/>
+        </td>
       </tr>`
       bodyDetail.innerHTML += `<tr>
         <td>Produk Images</td>
         <td>:</td>
-        <td class="width: 100">${data.images.join('<br/>')}</td>
+        <td>
+            ${data.images.map(x=>`<img src="${x}" width="100"/><br>`)}
+        </td>
       </tr>`
     })
     .catch(err => alert(err.message))
