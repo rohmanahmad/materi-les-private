@@ -1,3 +1,86 @@
-samakan dengan yang detail pada materi part4 dengan beberapa tambahan:
+<!-- samakan dengan yang detail pada materi part4 dengan beberapa tambahan:
 - "Produk Thumbnail" gunakan image untuk preview dengan width=200(bisa dicek untuk menambahkan width pada "part4 list")
-- "Produk Images" juga gunakan image untuk preview dengan width 100.
+- "Produk Images" juga gunakan image untuk preview dengan width 100. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk</title>
+</head>
+<body>
+  <table class="table">
+    <tbody id="produk-detail">
+      
+    </tbody>
+  </table>
+  <script>
+    function getProdukId () {
+      let produkId = window.location.search.replace('?produkid=', '')
+      return produkId
+    }
+    fetch('https://dummyjson.com/products/' + getProdukId())
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      const bodyDetail = document.getElementById('produk-detail')
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Id</td>
+        <td>:</td>
+        <td>${data.id}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Title</td>
+        <td>:</td>
+        <td>${data.title}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Description</td>
+        <td>:</td>
+        <td>${data.description}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Price</td>
+        <td>:</td>
+        <td>${data.price}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk DiscountPercentage</td>
+        <td>:</td>
+        <td>${data.discountPercentage}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Rating</td>
+        <td>:</td>
+        <td>${data.rating}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Stock</td>
+        <td>:</td>
+        <td>${data.stock}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Brand</td>
+        <td>:</td>
+        <td>${data.brand}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Category</td>
+        <td>:</td>
+        <td>${data.category}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Thumbnail</td>
+        <td>:</td>
+        <td class="width: 200">${data.thumbnail}</td>
+      </tr>`
+      bodyDetail.innerHTML += `<tr>
+        <td>Produk Images</td>
+        <td>:</td>
+        <td class="width: 100">${data.images.join('<br/>')}</td>
+      </tr>`
+    })
+    .catch(err => alert(err.message))
+  </script>
+</body>
+</html>
