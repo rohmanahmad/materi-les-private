@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Part 5 - Functions</title>
+  </head>
+  <body>
+    <h1 id="el-result">Result</h1>
+    <script>
+      function getElement () {
+        return document.getElementById('el-result')
+      }
+      function tambah (a, b) {
+        return a + b
+      }
+      function kali (a, b) {
+        return a * b
+      }
+      function hapus () {
+        const el = getElement()
+        el.innerHTML = ''
+      }
+      function tampilkanHasil (hasil) {
+        const el = getElement()
+        el.innerHTML = hasil
+      }
+
+      // pemanggilan function
+      const hasilTambah = tambah(10, 18)
+      tampilkanHasil(hasilTambah) // menampilkan hasil operasi penjumlahan pada layar browser seketika itu
+
+      setTimeout(function () {
+        const hasilKali = kali(30, 3)
+        tampilkanHasil(hasilKali) // menampilkan hasil operasi perkalian pada layar browser setelah 5 detik setelah browser ready(loading sudah selesai).
+      }, 5 * 1000)
+    </script>
+  </body>
+</html>
