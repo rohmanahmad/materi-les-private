@@ -1,7 +1,7 @@
 <!-- 
 
   studi kasus:
-  - nilai dari 50 + 80 -40 / 10 * 5
+  - nilai dari 50 + (80 -40) / 10 * 5
   - buat fungsi/function untuk menentukan hasil dari nilai diatas
   - gunakan template dari data-information/part5-function.html
   - yg boleh di copy-paste adalah line: 1-7 dan 27-41
@@ -15,19 +15,17 @@
   <body>
     <h1 id="el-result">Result</h1>
     <script>
-      const hasilTambah = tambah(50, 80)
-      tampilkanHasil(hasilTambah)
-      const hasilKurang = kurang(hasilTambah, 40)
-      tampilkanHasil(hasilKurang)
+      const hasilKurang = kurang(80,40)
       const hasilBagi = bagi(hasilKurang, 10)
-      tampilkanHasil(hasilBagi)
       const hasilKali = kali(hasilBagi, 5)
-      tampilkanHasil(hasilKali)
-      function tambah (x, y){
-        return x + y
-      }
+      const hasilTambah = tambah(hasilKali, 50)
+      
+      tampilkanHasil(hasilTambah)
       function kurang (x, y){
         return x - y
+      }
+      function tambah (x, y){
+        return x + y
       }
       function kali (x, y){
         return x * y

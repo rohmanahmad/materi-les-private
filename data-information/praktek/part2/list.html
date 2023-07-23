@@ -13,7 +13,7 @@
                 <thead>
                     <tr>
                       <td colspan="4">
-                        <input type="text" id="search" class="form-control">
+                        <input type="text" id="search" class="form-control" value="Samsung">
                       </td>
                       <td>
                         <button class="btn btn-primary" onclick="carikanSayaSepertiYangSyTulis()">Cari</button>
@@ -51,9 +51,12 @@
           }
           function carikanSayaSepertiYangSyTulis() {
             const valueDariInput = document.getElementById('search').value
+            alert(valueDariInput)
             getData(valueDariInput)
             // alert()
           }
+          carikanSayaSepertiYangSyTulis()
+          //getData('samsung')
         </script>
         <script>
             function fillRow(item={}) {
