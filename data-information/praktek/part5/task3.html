@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Part 5 - Task3 - Functions</title>
+  </head>
+  <body>
+    <h3>
+      Saya Adalah Seorang Laki-laki Yang Lahir Pada Tahun {tahun}. Pada Saat Ini Berarti Umur Saya adalah {umur}
+    </h3>
+    <h3 id="el-result">Result</h3>
+    <script>
+      const tahunLahir = 1994
+      function getElement () {
+        return document.getElementById('el-result')
+      }
+      function tampilkanHasil (hasil) {
+        const el = getElement()
+        el.innerHTML = hasil
+      }
+      function getTemplate() {
+        return 'Saya Adalah Seorang Laki-laki Yang Lahir Pada Tahun {tahun}. Pada Saat Ini Berarti Umur Saya adalah {umur}'
+      }
+      function getHasil () {
+        const template = getTemplate()
+        let str = template.replace('{tahun}', tahunLahir)
+        const umurSekarang = 2023 - tahunLahir
+        let str1 = template.replace('{umur}', umurSekarang)
+        tampilkanHasil(str)
+      }
+      getHasil()
+    </script>
+  </body>
+</html>
