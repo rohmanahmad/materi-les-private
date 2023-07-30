@@ -1,11 +1,11 @@
 <html>
   <head>
-    <title>Part 5 - Task3 - Functions</title>
+    <title>Part 5 - Task4 - Functions</title>
   </head>
   <body>
-    <!-- <h3>
-      Saya Adalah Seorang Laki-laki Yang Lahir Pada Tahun {tahun}. Pada Saat Ini Berarti Umur Saya adalah {umur}
-    </h3> -->
+    <h3>
+      Saya Adalah Seorang Laki-laki Yang Lahir Pada Tahun 1994. Pada Saat Ini Berarti Umur Saya adalah 29. Dan Saya Merupakan Seorang Programmer Kelas Teri.
+    </h3>
     <h3 id="el-result">Result</h3>
     <script>
       const tahunLahir = 1994
@@ -16,6 +16,9 @@
         const el = getElement()
         el.innerHTML = hasil
       }
+      function templateA() {
+        return 'Saya Merupakan Seorang Programmer Kelas Teri.'
+      }
       function getTemplate() {
         return 'Saya Adalah Seorang Laki-laki Yang Lahir Pada Tahun {tahun}. Pada Saat Ini Berarti Umur Saya adalah {umur}'
       }
@@ -24,7 +27,7 @@
         let str = template.replace('{tahun}', tahunLahir)
         const umurSekarang = 2023 - tahunLahir
         str = str.replace('{umur}', umurSekarang)
-        tampilkanHasil(str)
+        // tampilkanHasil(str)
       }
       getHasil()
     </script>
