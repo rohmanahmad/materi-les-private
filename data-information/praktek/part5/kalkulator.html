@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalkulator</title>
+</head>
+<body>
+    <h1 id="el-result">kalkulator</h1>
+    <input type="number" name="x" value="">
+    <select class="" name="opt">
+        <option value="tambah">+</option>
+        <option value="kurang">-</option>
+        <option value="kali">x</option>
+        <option value="bagi">/</option>
+    </select>
+    <input type="number" name="y" value="">
+    <input type="button" name="hasil" onclick="kalkulator()"> 
+    <input type="text" name="total" value="">
+    
+    <script>
+        function kalkulator(){
+            let kalk = document.getElementById('el-result')
+            let x = eval(kalk.x.value)
+            let y = eval(kalk.y.value)
+            let opsi = kalk.opt.value
+
+            if(opsi == "tambah"){
+					var hasilhitung = x + y
+				}
+				else if(opsi == 'kurang'){
+					var hasilhitung = x - y
+				}
+				else if(opsi == 'kali'){
+					var hasilhitung = x * y
+				}
+				else {
+					var hasilhitung = x / y
+				}
+
+            kalk.total.value = hasilhitung
+            kalk.x.value = ''
+            kalk.y.value = ''
+        }
+        
+    </script>
+</body>
+</html>

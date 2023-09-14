@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let currentURL = window.location.href
+        const arr = currentURL.split('?')
+        const arr1 = arr[1].split('&')
+        const cari1 = arr1.find(x => x.includes('angka1'))
+        const pisah1 = cari1.split('=')
+        let angka1 = Number(pisah1[1])
+        const cari2 = arr1.find(x => x.includes('angka2'))
+        const pisah2 = cari2.split('=')
+        let angka2 = Number(pisah2[1])
+        const cari3 = arr1.find(x => x.includes('operator'))
+        const pisah3 = cari3.split('=')
+        let hasil = 0
+        // if (pisah3[1]== 'tambah') hasil = angka1 + angka2
+        // else if (pisah3[1]== 'kurang') hasil = angka1 - angka2
+        // else if (pisah3[1]== 'kali') hasil = angka1 * angka2
+        // else if (pisah3[1]== 'bagi') {
+        //     hasil = angka1 / angka2
+        //     if (angka1 == 0 || angka2 ==0) {
+        //         hasil = 0
+        //     } 
+        // }
+        switch (pisah3[1]) {
+            case 'tambah':
+                hasil = angka1 + angka2
+                break;
+            case 'kurang':
+                hasil = angka1 - angka2
+                break;
+            case 'kali':
+                hasil = angka1 * angka2
+                break;
+            case 'bagi':
+                hasil = angka1 / angka2
+                if (angka1 == 0 || angka2 ==0) {
+                    hasil = 0
+                }
+                break;
+        }
+        document.write(hasil)
+    </script>
+</body>
+</html>

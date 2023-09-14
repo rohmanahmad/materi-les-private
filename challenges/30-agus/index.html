@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let currentURL = window.location.href
+        const arr = currentURL.split('?')
+        const arr1 = arr[1].split('&')
+        // const angka1 = arr1[0].split('=')
+        // const angka2 = arr1[1].split('=')
+        // document.write( angka1[1] ," ",angka2[1])
+        
+        const cari = arr1.find(x => x.includes('angka1'))
+        const pisah = cari.split('=')
+        document.write(pisah[1])
+
+    </script>
+</body>
+</html>
