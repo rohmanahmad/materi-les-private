@@ -1,0 +1,1 @@
+const ex1 = require('../extras/ex1')
