@@ -18,15 +18,17 @@
 */
 const args = process.argv
 const splitURL = args[2].split('--url=')
-const url = new URL(splitURL[1])
-const protocol = url.protocol.replace(":"," ")
-const domain = url.host
-const path = url.pathname
-const parameters = url.searchParams
-console.log("protocol: "+ protocol)
-console.log("domain: "+domain)
-console.log("path: "+path)
-console.log("parameters: ")
-parameters.forEach((value, key) =>{
-    console.log("- "+`${key}: ${value}`)
-}) 
+const url = splitURL[1]
+const splitProt = url.split('//') // Protocol
+const prot = splitProt[0].replace(":"," ")
+const splitDom = splitProt[1].split('/') //Domain
+const splitpath = splitProt[1].split('?')
+const repdom = splitpath[0].replace(splitDom[0], '') //Path
+const splitParam = splitpath[1].split('&') // semua parameter
+console.log('Protocol: '+prot)
+console.log('Domain: '+splitDom[0])
+console.log('Path: '+repdom)
+console.log('Parameter: ')
+for (let value of splitParam) {
+    console.log('- '+value)
+}

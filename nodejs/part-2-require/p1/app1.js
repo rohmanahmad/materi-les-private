@@ -1,5 +1,5 @@
 const { tambah, kurang } = require('./komponen/kalkulator')
-const komponen2 = require('./komponen2')
+const komponen2 = require('./komponen/komponen2')
 
 const n1 = 2
 const n2 = 3
