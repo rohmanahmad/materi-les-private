@@ -15,7 +15,13 @@ connection.execute(
   function(err, results, fields) {
     console.log('=============== Pakai .execute')
     if (err) console.error(err)
-    console.log(results) // results contains rows returned by server
+    console.log('hello') // results contains rows returned by server
     // console.log(fields) // fields contains extra meta data about results, if available
   }
 )
+
+console.log(1)
+console.log(2)
+console.log(3)
+console.log(4)
+console.log(5)
