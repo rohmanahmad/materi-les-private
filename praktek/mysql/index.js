@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
   })
 
   connection.query(
-    'SELECT `key_id` as `key`, `key_name` as `name` FROM `ripple_client_keyword` where key_id BETWEEN 1 and 15',
+    'SELECT `key_id` as `key`, `key_name` as `name` FROM `ripple_client_keyword` where key_id 1',
     function(err, results, fields) {
         if(err) console.error(err)
         console.log(results); // results contains rows returned by server
